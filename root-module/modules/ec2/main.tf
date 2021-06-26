@@ -19,7 +19,7 @@ provisioner "remote-exec" {
 connection{
     type="ssh"
     user="ubuntu"
-    private_key=file ("devops1.pem")
+    private_key=file ("../../devops1.pem")
     host=self.public_ip
 }
 }
