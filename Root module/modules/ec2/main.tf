@@ -23,7 +23,7 @@ connection{
     host=self.public_ip
 }
 }
-provisioner "remote-exec" {
+provisioner "local-exec" {
     command=
 }    
 
