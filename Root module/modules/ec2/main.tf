@@ -11,34 +11,20 @@ resource "aws_instance" "i1" {
         Name = "Web Server - Assignment2"
     }
 
-provisioner "file"{
-     source="myscript.sh"
-     destination="/tmp/myscript.sh"
-}
 provisioner "remote-exec" {
     inline=[
-      "chmod +x /tmp/myscript.sh",
-      "/tmp/myscript.sh",
+      "sudo apt-get install -y python3"
     ]
-
-}
-connection{i
-    type="ssh"
-    user="ubuntu"
-    private_key=file ("devops1.pem")
-    host=self.public_ip[0]
-}
-
-provisioner "remote-exec" {
-    command="sudo apt-get install -y python3"
 
 connection{
     type="ssh"
     user="ubuntu"
     private_key=file ("devops1.pem")
-    host=self.public_ip[1]
+    host=self.public_ip
+}
+}
+provisioner "remote-exec" {
+    command=
 }    
 
-}
-  
 }
