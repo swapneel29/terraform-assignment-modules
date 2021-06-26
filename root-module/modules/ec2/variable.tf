@@ -5,5 +5,7 @@ variable "type" {
     default="t2.micro"
 }
 variable "pemfile" {}
-variable "securitygroup-id" {}
+variable "securitygroup-id" {
+    type=string
+}
 variable "subnet1-id" {}
