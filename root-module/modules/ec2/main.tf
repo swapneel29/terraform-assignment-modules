@@ -24,7 +24,7 @@ connection{
 }
 }
 provisioner "local-exec" {
-    command=
+    command="echo ${aws_instance.i1.private_ip} >> /etc/ansible/privateip.txt"
 }    
 
 }
