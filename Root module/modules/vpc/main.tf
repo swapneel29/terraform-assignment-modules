@@ -18,6 +18,7 @@ resource "aws_subnet" "publicsn1-1a" {
     Name = "Publicsn1-assignment2"
   
 }
+}
 
 resource "aws_internet_gateway" "vpc1_ig1" {
   vpc_id = aws_vpc.vpc1.id
@@ -72,4 +73,5 @@ resource "aws_security_group" "sg1" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
 }
