@@ -12,8 +12,8 @@ resource "aws_instance" "i1" {
     }
 
 provisioner "remote-exec" {
-    inline=[
-      "sudo apt-get install -y python3"
+    inline=["sudo apt-get update",
+      "sudo apt-get install -y python3",
     ]
 
 connection{
@@ -24,7 +24,7 @@ connection{
 }
 }
 provisioner "local-exec" {
-    command="echo ${aws_instance.i1.private_ip} >> /etc/ansible/privateip.txt"
+    command="echo ${aws_instance.i1.private_ip} > /etc/ansible/privateip.txt"
 }    
 
 }
