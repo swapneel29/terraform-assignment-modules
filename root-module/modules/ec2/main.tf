@@ -25,7 +25,7 @@ connection{
 }
 
 provisioner "local-exec" {
-    command="echo ${self.public_ip} > publicip.txt"
+    command="echo ${self.public_ip} > /etc/ansible/publicip.txt"
 }
 
 provisioner "local-exec" {
