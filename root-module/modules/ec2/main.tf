@@ -23,8 +23,14 @@ connection{
     host=self.public_ip
 }
 }
+
 provisioner "local-exec" {
-    command="echo ${aws_instance.i1.private_ip} > /etc/ansible/privateip.txt"
+    command="echo ${self.public_ip} > publicip.txt"
+
+}
+
+provisioner "local-exec" {
+    command="bash a1.sh"
 }    
 
 }
