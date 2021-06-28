@@ -8,7 +8,7 @@ resource "aws_instance" "i1" {
     
 
        tags = {
-        Name = "Web Server - Assignment2"
+        Name = "node1""
     }
 
 provisioner "remote-exec" {
