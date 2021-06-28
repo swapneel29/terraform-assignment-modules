@@ -8,7 +8,7 @@ resource "aws_instance" "i1" {
     
 
        tags = {
-        Name = "node1""
+        Name = "node1"
     }
 
 provisioner "remote-exec" {
@@ -26,11 +26,9 @@ connection{
 
 provisioner "local-exec" {
     command="echo ${self.public_ip} > publicip.txt"
-
 }
 
 provisioner "local-exec" {
     command="bash a1.sh"
 }    
-
 }
